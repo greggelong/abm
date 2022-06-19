@@ -11,7 +11,7 @@ void setup(){
   rows = int(height/sz);
   noStroke();
   forest = new int[rows][cols]; // array is y,x 
-  rndTree(1);
+  rndTree(0.5);
   showForest();
   
   
@@ -40,13 +40,13 @@ void showForest() {
 
 
 
-void rndTree(int p) {
+void rndTree(float p ) {
   
   
   for (int j =0; j < rows; j++) {
     for (int i =0; i < cols; i++) {
       
-     if (floor(random(p))== 1){
+     if ((random(1))>= p){
       // set points for collision
       forest[j][i] = 1;
       //grid[j+3][i+1]=1;
